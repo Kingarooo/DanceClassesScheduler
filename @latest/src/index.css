@@ -1,0 +1,75 @@
+@font-face {
+  font-family: kelsifont;
+  src: url("/src/assets/kelsi/Kelsi-fill.otf") format("opentype");
+}
+:root {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color-scheme: light dark;
+  background-color: var();
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+  --font-weight: 400;
+
+  --color-scheme: light dark;
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-background: #242424;
+  --color-almost-black: #0a0a0a;
+  --color-purple: #6a0dad;
+  --color-purple-hover: #530d99;
+  --color-neon-blue: #646cff;
+  --color-neon-blue-hover: #535bf2;
+  --color-pink: #ff1493;
+  --color-pink-hover: #cc1174;
+
+  --button-radius: 8px;
+  --button-border: 1px solid transparent;
+  --button-padding: 0.6em 1.2em;
+  --button-font-size: 1.2em;
+  --button-font-weight: 500;
+
+  --transition-time: 0.5s;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}

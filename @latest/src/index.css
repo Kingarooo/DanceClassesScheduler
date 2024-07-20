@@ -1,6 +1,11 @@
 @font-face {
   font-family: kelsifont;
-  src: url("/src/assets/kelsi/Kelsi-fill.otf") format("opentype");
+  src: url("/src/assets/fonts/DancingTime.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: diskopia ;
+  src: url("/src/assets/fonts/Diskopia3.ttf");
 }
 :root {
   margin: 0;

@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@prisma/client": "^5.17.0",
     "bootstrap": "^5.3.3",
+    "fastify": "^4.28.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.4",
     "react-calendar": "^5.0.0",
@@ -18,6 +21,10 @@
     "react-router-dom": "^6.24.0"
   },
   "devDependencies": {
+    "@schedule-x/drag-and-drop": "^1.53.0",
+    "@schedule-x/event-modal": "^1.53.0",
+    "@schedule-x/event-recurrence": "^1.53.0",
+    "@schedule-x/events-service": "^1.52.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
@@ -25,6 +32,10 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "fastify-type-provider-zod": "^2.0.0",
+    "node": "^18.20.4",
+    "prisma": "^5.17.0",
+    "rrule": "^2.8.1",
     "vite": "^5.2.0"
   }
 }

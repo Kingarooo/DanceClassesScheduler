@@ -4,7 +4,6 @@ Welcome to the Dance Class Scheduler! This application helps you manage and sche
 
 ## Table of Contents
 
-- [Features](#features)
 - [Technologies](#technologies)
 
 ## Technologies

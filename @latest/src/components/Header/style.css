@@ -7,12 +7,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  }
-  .title{
-    font-family: kelsifont;
-    font-size: 50px;
-  }
-  .navbar {
+  flex:1;
+}
+
+.title {
+  font-family: kelsifont;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 10%;
+  /*A  LETRA É GIGANTE E ESTÁ DESALINHADA  */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+
+.navbar {
   margin: auto;
   text-align: center;
   font-size: var(--button-font-size);
@@ -20,13 +32,14 @@
   height: 100%;
   padding-left: 20%;
 }
-  
-  .navbar ul {
+
+.navbar ul {
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
+
 .logo {
   width: 10vw;
   height: 15vh;
@@ -34,16 +47,13 @@
   text-decoration: none;
 }
 
-.logo-container{
-  display: flex;
-  align-items: center;
 
-}
+
 .nav-links {
   list-style: none;
   gap: 2em;
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -55,5 +65,5 @@
 .nav-links li:hover {
   color: rgb(66, 6, 232);
   text-decoration: line-through;
-  transition: all 1s  linear;
+  transition: all 1s linear;
 }

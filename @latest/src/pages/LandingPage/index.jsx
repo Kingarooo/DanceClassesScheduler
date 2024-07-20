@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
@@ -6,7 +7,7 @@ import './styles.css';
   import Header from '/src/components/Header';
   import Footer from '/src/components/Footer';
 
-import instructorImage from '/src/assets/instructor.jpg';
+import instructorImage from '/src/assets/neonShit.gif';
 import danceGif from '/src/assets/dance.gif';
 
 const LandingPage = () => {
@@ -22,14 +23,14 @@ const LandingPage = () => {
       <Header />
       <div className="carousel-container">
         <Carousel touch>
-          <Carousel.Item interval={1000}>
+          <Carousel.Item interval={2500}>
             <img
               className="d-block w-100"
               src={instructorImage}
               alt="First slide"
             />
           </Carousel.Item>
-          <Carousel.Item interval={1000}>
+          <Carousel.Item interval={2000}>
             <img
               className="d-block w-100"
               src={danceGif}

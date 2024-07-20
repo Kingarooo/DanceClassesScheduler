@@ -3,5 +3,6 @@
     color: var(--color-text);
     text-align: center;
     padding: 1em 0;
+    margin-top: auto;
   }
   

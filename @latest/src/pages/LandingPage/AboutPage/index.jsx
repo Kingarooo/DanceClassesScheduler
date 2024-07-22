@@ -9,8 +9,11 @@ const AboutPage = () => {
     return (
         <div className="about-page">
             <Header />
-            <h1 className='inventing'>Move <p></p>Your <p></p>Soul<p> </p> & <p></p>Your<p></p> Body<p></p> Follows
+            <div className="inventing">
+
+            <h1>Move <p></p>Your <p></p>Soul<p> </p> & <p></p>Your<p></p> Body<p></p> Follows
             </ h1>
+            </div>
             <div className="about-div">
                 <p></p>
                 <h1 id='about-us'>About Us</h1>

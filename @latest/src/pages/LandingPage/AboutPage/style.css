@@ -7,24 +7,28 @@
     font-family: diskopia;
     display: flex;
     flex-direction: column;
-    font-size: 7vh;
-    position: fixed;
-    translate: 50% 5%;
+    justify-content: end;
+    position: absolute;
+    translate: 50% 22%;
     gap: 10%;
+    
 }
 
-#about-us{
+#about-us {
     font-size: 5vh;
-    color: white;
+    color: rgb(131, 98, 98);
     margin-top: 5%;
     margin-bottom: 5%;
 
 }
-h1.inventing {
+
+.inventing h1 {
+    font-size: 7vh;
     background: linear-gradient(to right, rgb(78, 4, 118), pink);
     -webkit-background-clip: text;
     color: transparent;
 }
+
 .about-div {
     padding: 0 10% 0 10%;
     padding: 0 25% 0 25%;
@@ -33,16 +37,17 @@ h1.inventing {
     flex-direction: column;
 }
 
-#discoGif{
+#discoGif {
     width: 10em;
     height: 20em;
 }
+
 .first-about {
     display: flex;
     gap: 20px;
     flex-direction: row;
     border: 4px solid rgb(86, 8, 86);
-    background-color: rgba(86, 8, 86,0.8) ;
+    background-color: rgba(86, 8, 86, 0.8);
     border-radius: 10px;
     line-height: 50px;
 }
@@ -54,6 +59,6 @@ h1.inventing {
     line-height: 50px;
 }
 
-.about-text{
+.about-text {
     font-size: larger;
 }

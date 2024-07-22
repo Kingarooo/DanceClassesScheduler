@@ -9,11 +9,11 @@ const AboutPage = () => {
     return (
         <div className="about-page">
             <Header />
-            <h1 id='inventing'>Move <p></p>Your <p></p>Soul<p> </p> & <p></p>Your<p></p> Body<p></p> Follows
+            <h1 className='inventing'>Move <p></p>Your <p></p>Soul<p> </p> & <p></p>Your<p></p> Body<p></p> Follows
             </ h1>
             <div className="about-div">
                 <p></p>
-                <h1>About Us</h1>
+                <h1 id='about-us'>About Us</h1>
                 <div className="first-about">
 
                     <img id="discoGif" src={disco} alt="About Us" />

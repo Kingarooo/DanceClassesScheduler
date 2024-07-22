@@ -34,7 +34,7 @@ a:hover {
 
 .carousel-item img, .carousel-item video {
   width: 100%;
-  height: 500px; /* Adjust this to your desired height */
+  height: 80vh; /* Adjust this to your desired height */
   object-fit: cover; /* This will ensure the aspect ratio is maintained */
 }
 

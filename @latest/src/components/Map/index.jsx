@@ -5,6 +5,14 @@ import "./style.css";
 import { Icon } from "@iconify/react";
 import locationIcon from "@iconify/icons-mdi/map-marker";
 
+function Scroll() {
+  const element = document.getElementById("mapii");
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+
 const location = [
   {
     address: "Departamento de Ciência de Computadores FCUP",
@@ -29,10 +37,10 @@ const LocationPin = ({ text }) => (
 const Map = () => {
   return (
     <div className="map">
-      <h2 className="map-h2">Come Visit Us</h2>
-      <div className="google-map">
+      <h2 className="map-h2" onClick={Scroll}>Come Visit Us</h2>
+      <div id='mapii' className="google-map">    
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyARDs4b3QSh9XNASXEeTFS5DjbSyUv2YE0" }}
+          bootstrapURLKeys={{key: import.meta.env.REACT_APP_GOOGLE_MAP_API_KEY }}
           defaultCenter={location[0]}
           defaultZoom={12}>
           {location.map((loc, index) => (

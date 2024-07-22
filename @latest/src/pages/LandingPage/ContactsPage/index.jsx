@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import Map from '../../../components/Map';
+import Map from '../../../components/Map';  
 import './style.css';
 import { Icon } from '@iconify/react';
 // import IonArrowDown from ;
@@ -24,7 +24,7 @@ const ContactsPage = () => {
                 <div className="contact-form-wrapper">
 
                     <div className="arrow-wrapper">
-                        <Icon style={{ color: 'rgba(160, 60, 100, 0.9)' }} icon="ion:arrow-down" className='arrows' />
+                        <Icon style={{ color: '#6a1b9a' }} icon="ion:arrow-down" className='arrows' />
                     </div>
                     <div className="contact-form">
                         <h2>Send Us a Message</h2>
@@ -45,7 +45,7 @@ const ContactsPage = () => {
                         </form>
                     </div>
                     <div className="arrow-wrapper">
-                        <Icon style={{ color: 'rgba(160, 60, 100, 0.9)' }} icon="ion:arrow-down" className='arrows' />
+                        <Icon style={{ color: '#6a1b9a' }} icon="ion:arrow-down" className='arrows' />
                     </div>
                 </div>
                 <div className="map-container">

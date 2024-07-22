@@ -44,6 +44,7 @@
   --button-font-weight: 500;
 
   --transition-time: 0.5s;
+overflow-y: scroll;
 }
 
 .body {

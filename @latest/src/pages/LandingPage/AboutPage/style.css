@@ -26,6 +26,7 @@
     font-size: 7vh;
     background: linear-gradient(to right, rgb(78, 4, 118), pink);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 

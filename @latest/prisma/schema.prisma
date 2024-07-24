@@ -11,32 +11,40 @@ datasource db {
 }
 
 model User {
-  id       String   @id @default(cuid())
-  email    String   @unique
+  id       String  @id @default(cuid())
+  email    String  @unique
   name     String?
   password String
-  
 
   Class Class[]
 }
 
+model Contact {
+  id        Int      @id @default(autoincrement())
+  usable_id String   @default(uuid())
+  name      String
+  email     String   
+  subject   String
+  content   String
+  sentAt    DateTime @default(now())
+}
+
 model Teachers {
-  id       String   @id @default(cuid())
-  style    String 
+  id       String  @id @default(cuid())
+  style    String
   name     String?
-  email    String   @unique
+  email    String  @unique
   password String
 
   Class Class[]
 }
 
 model Class {
-  id          String   @id @default(cuid())
-  name        String
-  style       String
-  description String
-  teacher     Teachers @relation(fields: [teacherId], references: [id])
-  teacherId   String
-  participants    User[]
-
+  id           String   @id @default(cuid())
+  name         String
+  style        String
+  description  String
+  teacher      Teachers @relation(fields: [teacherId], references: [id])
+  teacherId    String
+  participants User[]
 }

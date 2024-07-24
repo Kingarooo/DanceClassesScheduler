@@ -5,7 +5,7 @@ import Merch from '/src/pages/LandingPage/MerchPage'
 import LessonPage from '/src/pages/LandingPage/LessonPage'
 import AboutPage from '/src/pages/LandingPage/AboutPage'
 import ContactsPage from '/src/pages/LandingPage/ContactsPage'
-import QuestionsPage from './pages/LandingPage/QuestionsPage'
+import QuestionsPage from '/src/pages/LandingPage/QuestionsPage'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 

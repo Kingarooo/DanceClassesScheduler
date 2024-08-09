@@ -12,7 +12,6 @@ function ButtonDarkExample() {
                 title="CLASSES"
                 data-bs-theme="dark"
                 drop='down-centered'
-                menuVariant=''
             >
                 <Dropdown.Item className='dpd-item' href="Individual Class" active>
                     INDIVIDUAL CLASS

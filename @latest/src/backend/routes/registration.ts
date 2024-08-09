@@ -14,6 +14,7 @@ export async function registration(app: FastifyInstance) {
                 email: z.string().email(),
                 password: z.string(),
                 passwordConfirmation: z.string(),
+                newsletter: z.boolean(),
             }),
         },
         handler: async (request, reply) => {

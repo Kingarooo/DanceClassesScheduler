@@ -58,46 +58,49 @@ body {
 }
 
 .contact-info,
-.contact-form {
+.contact-form, .contact-form select {
     border-radius: 8px;
     padding: 20px;
     min-width: 40vw;
 }
 
 .contact-info h2,
-.contact-form h2 {
+.contact-form h2, .contact-form select {
     color: var(--purple-color);
     font-weight: bold;
 }
 
-.contact-form form {
+.contact-form form, .contact-form select {
     display: flex;
     flex-direction: column;
 }
 
-.contact-form label {
+.contact-form label, .contact-form select {
     margin-top: 8px;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form input, 
+.contact-form textarea, .contact-form select {
     border: 1px solid var(--secondary-color);
     border-radius: 4px;
     padding: 8px;
     margin-top: 8px;
 }
 
-.contact-form button {
+.contact-form button, .contact-form select {
     margin-top: 10px;
-    background-color: var(--primary-color);
     color: white;
-    border: none;
+    border: 1px solid var(--secondary-color);
     border-radius: 4px;
     padding: 11px;
     cursor: pointer;
 }
 
-.contact-form button:hover {
+.contact-form select::before{
+    
+}
+
+.contact-form button, .contact-form select:hover {
     background-color: var(--secondary-color);
 }
 

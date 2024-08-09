@@ -13,11 +13,11 @@ export async function contactEmail(app: FastifyInstance) {
                 name: z.string(),
                 email: z.string().email(),
                 subject: z.string(),
-                content: z.string(),
+                message: z.string(),
             }),
         },
         handler: async (request, reply) => {
-            const { name, email, subject, content } = request.body;
+            const { name, email, subject, message } = request.body;
 
             if (name === null){
                 throw new Error('Please Provide Us With a Name To Adress You.')
@@ -26,17 +26,19 @@ export async function contactEmail(app: FastifyInstance) {
                 throw new Error('Please Insert a Subject!');
             }
 
-            const message = await prisma.contact.create({
+            const content = await prisma.contact.create({
                 data: {
                     name,
                     email,
                     subject,
-                    content,
-                    
+                    content: message,
                 },
             });
-            console.log(message);
-            return message;
+            
+            //reset the form
+
+            console.log(content);
+            return content;
         },
     },);
 }

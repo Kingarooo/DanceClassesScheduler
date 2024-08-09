@@ -18,11 +18,13 @@
     "react-bootstrap": "^2.10.4",
     "react-calendar": "^5.0.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.24.0"
+    "react-router-dom": "^6.24.0",
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "@iconify/icons-mdi": "^1.2.48",
     "@iconify/react": "^5.0.1",
+    "@mui/material": "^5.16.4",
     "@schedule-x/drag-and-drop": "^1.53.0",
     "@schedule-x/event-modal": "^1.53.0",
     "@schedule-x/event-recurrence": "^1.53.0",

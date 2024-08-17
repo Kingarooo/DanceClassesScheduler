@@ -1,4 +1,4 @@
-/* //Used only for colored theme */
+/* //Used only for colored theme
 :root {
     --toastify-text-color-info: #fff;
     --toastify-text-color-success: #fff;
@@ -39,4 +39,4 @@
 
 .Toastify__progress-bar--warning {}
 
-.Toastify__progress-bar--error {}
+.Toastify__progress-bar--error {} */

@@ -16,6 +16,7 @@ model User {
   name     String?
   password String
   newsletter Boolean @default(true)
+  admin    Boolean @default(false)
 
   Class Class[]
 }

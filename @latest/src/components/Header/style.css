@@ -68,3 +68,15 @@
   text-decoration: line-through;
   transition: all 1s linear;
 }
+
+.profile-button{
+  width: 50px;
+  height:   50px;
+  cursor: pointer;
+}
+
+.pfp-box{
+  width: 50px;
+  height:   50px; 
+  background-color: blueviolet;
+}

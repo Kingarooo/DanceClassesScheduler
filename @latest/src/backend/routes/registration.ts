@@ -3,13 +3,10 @@ import type { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { z } from 'zod';
 import { prisma } from '../lib/prisma';
 import bcrypt from 'bcryptjs';
-// import dayjs from 'dayjs';
-// import { getMailClient } from '../lib/mail';
-// import nodemailer from 'nodemailer';
+import { toast } from 'react-toastify';
 
 export async function registration(app: FastifyInstance) {
     app.withTypeProvider<ZodTypeProvider>().post('/registration', {
-
         schema: {
             body: z.object({
                 name: z.string(),
@@ -20,7 +17,7 @@ export async function registration(app: FastifyInstance) {
             }),
         },
         handler: async (request, reply) => {
-            const { name, email, newPassword, newsletter } = request.body;
+            const { name, email, newPassword, newsletter, admin } = request.body;
 
             try {
                 // Hash the password
@@ -34,19 +31,19 @@ export async function registration(app: FastifyInstance) {
                         email,
                         password: hashedPassword,
                         newsletter,
+                        admin,
                     },
                 });
-                
-                reply.code(201).send(user);
+
+                // Exclude the password from the response
+                const { password: _, ...userWithoutPassword } = user;
+
+                toast.success(`Welcome, ${name}!`);
+                reply.code(201).send({ user: userWithoutPassword });
             } catch (error) {
                 console.error("Error during user registration:", error);
                 reply.code(500).send({ error: 'An error occurred during registration' });
             }
-
         },
-
-    },);
+    });
 }
-
-
-

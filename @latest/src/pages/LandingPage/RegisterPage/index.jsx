@@ -67,8 +67,8 @@ const RegisterPage = () => {
         showToast('success', `${isLoginMode ? 'Login' : 'Registration'} successful!`);
 
         // Save user data globally
-        login(response.data);
-
+        console.log(`UserData: ${JSON.stringify(response.data.user)}`);
+        login(response.data.user);
         setFormData({
           name: '',
           email: '',

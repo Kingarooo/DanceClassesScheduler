@@ -3,6 +3,7 @@ import type { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { z } from 'zod';
 import { prisma } from '../lib/prisma';
 import bcrypt from 'bcryptjs';
+import { toast } from 'react-toastify';
 
 export async function login(app: FastifyInstance) {
     app.withTypeProvider<ZodTypeProvider>().post('/login', {
@@ -32,8 +33,12 @@ export async function login(app: FastifyInstance) {
                     return reply.status(401).send({ error: 'Incorrect password. Please check your password and try again.' });
                 }
 
-                // If email and password are correct, return the user's name
-                return reply.status(200).send({ message: `Welcome back, ${user.name}!`, name: user.name });
+                // Exclude the password from the user object
+                const { password: _, ...userWithoutPassword } = user;
+
+                // If email and password are correct, return the user's details
+                toast.success(`Welcome back, ${user.name}!`);
+                return reply.status(200).send({ user: userWithoutPassword });
 
             } catch (error) {
                 console.error('Error during login:', error);

@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { UserProvider } from '/src/contexts/UserContext';
-// You can import additional providers here, like Redux Provider if needed
 import './index.css';
 // import Loader from '/src/components/Loader';
 import reportWebVitals from '/src/reportWebVitals';

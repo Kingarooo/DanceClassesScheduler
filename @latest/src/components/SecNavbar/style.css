@@ -1,0 +1,57 @@
+  .sec-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #2e2e2e;
+    /* Dark background */
+  }
+
+  .add-teacher-btn,
+  .delete-user-btn,
+  .remove-teacher-btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #7f3fbf;
+    /* Purple button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #000000;
+    gap: 10px;
+  }
+
+  .remove-teacher-btn {
+    background-color: #ff0000;
+    /* Red button */
+
+  }
+
+  .delete-user-btn {
+    background-color: #5c0000;
+    /* Red button */
+  }
+
+  .add-teacher-btn:hover,
+  .delete-user-btn:hover,
+  .remove-teacher-btn:hover {
+    background-color: #692fa0;
+    /* Darker purple on hover */
+  }
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #3e3e3e;
+    /* Darker input background */
+    color: white;
+    gap: 100px;
+  }
+
+  input::placeholder {
+    color: #bbb;
+    /* Lighter text in placeholder */
+  }

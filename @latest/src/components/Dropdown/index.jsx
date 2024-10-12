@@ -19,7 +19,7 @@ function ButtonDarkExample({ dropdownType }) {
     };
 
     const handleClassClick = () => {
-        navigate('/free-lesson'); // Redirect to the classes page
+        navigate('/lessons'); // Redirect to the classes page
     };
     const renderDropdownItems = () => {
         if (dropdownType === 'classes') {

@@ -10,60 +10,63 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Contact {
   id        Int      @id @default(autoincrement())
   usable_id String   @default(uuid())
   name      String
-  email     String   
+  email     String
   subject   String
   content   String
   sentAt    DateTime @default(now())
 }
-model User {
-  id              String   @id @default(cuid())
-  name            String
-  email           String   @unique
-  password        String
-  isTeacher       Boolean  @default(false)
-  teachingStyle   String?
 
-  classesTeaching ClassOnTeachers[]
+model User {
+  id            String  @id @default(cuid())
+  name          String
+  email         String  @unique
+  password      String
+  newsletter    Boolean @default(true)
+  isTeacher     Boolean @default(false)
+  teachingStyle String?
+  admin         Boolean @default(false)
+  
+
+  classesTeaching  ClassOnTeachers[]
   classesAttending ClassOnParticipants[]
 }
 
 model Class {
-  id           String   @id @default(cuid())
-  name         String
-  style        String
-  description  String
-  date         DateTime
-  start        DateTime 
-  end          DateTime
+  id              String   @id @default(cuid())
+  name            String
+  style           String
+  description     String
+  start           DateTime
+  end             DateTime
+  frequency       String
+  creationGroupId String   
 
-  teachers      ClassOnTeachers[]
-  participants  ClassOnParticipants[]
+  teachers     ClassOnTeachers[]
+  participants ClassOnParticipants[]
 }
 
 model ClassOnTeachers {
-  id       String @id @default(cuid())
-  userId   String
-  classId  String
+  id      String @id @default(cuid())
+  userId  String
+  classId String
 
-  user     User   @relation(fields: [userId], references: [id])
-  class    Class  @relation(fields: [classId], references: [id])
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  class Class @relation(fields: [classId], references: [id], onDelete: Cascade)
 
   @@unique([userId, classId])
 }
 
 model ClassOnParticipants {
-  id       String @id @default(cuid())
-  userId   String
-  classId  String
+  id      String @id @default(cuid())
+  userId  String
+  classId String
 
-  user     User   @relation(fields: [userId], references: [id])
-  class    Class  @relation(fields: [classId], references: [id])
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  class Class @relation(fields: [classId], references: [id], onDelete: Cascade)
 
   @@unique([userId, classId])
 }
-  

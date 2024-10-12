@@ -38,10 +38,10 @@ const LandingPage = () => {
           </Carousel.Item>
         </Carousel>
         <div className="carousel-overlay">
-          <h1 id="greeting">WELCOME TO Soul Motion</h1>
+          <h1 id="greeting">WELCOME TO SOUL MOTION</h1>
           <div className="button-container">
             <button className="cta-button" onClick={handleFreeClassClick}>
-              {isLoginMode ? `Welcome Back! Ready for Your Next Lesson?` : "Schedule Free Lesson"}
+              {isLoginMode ?  "Schedule Free Lesson": `Welcome Back! Ready for Your Next Lesson?` }
             </button>
           </div>
         </div>

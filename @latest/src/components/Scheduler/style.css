@@ -1,54 +1,45 @@
 
-
 #calendar {
   width: 100%;
   height: 800px;
   max-height: 90vh;
 }
-.rbc-header {
-  background: rgb(23, 16, 16);
-  padding: 4px;
-  font-weight: bold;
+
+.rbc-calendar {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
 }
 
+.event-box {
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-color: #f0f0f0; Example background color */
+  border-radius: 5px;
+  /* Optional for rounded corners */
+}
+
+
+/* Letter size inside event-box */
 .rbc-event {
   padding: 0 !important;
-  font-size: 16px;
+  font-size: 90%;
 }
 
-.rbc-event-label {
-  display: none !important;
-}
 
-.rbc-events-container {
-  background-color: rgba(rgb(155, 116, 165), 0.8) !important;
-}
-
+/* Hour column color, when in week mode */
 .rbc-time-gutter {
   background-color: rgb(23, 16, 16) !important;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  padding-right: 1.8em;
-  margin: auto;
 }
 
-.rbc-timeslot-group{
+.rbc-timeslot-group {
   /* padding-right: 1.8em; */
   width: 100%;
   align-items: center;
-  text-align: center;
-  justify-content: center;
-  
-}
-.rbc-time-slot{
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-.rbc-time-column {
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin: auto;
+
 }

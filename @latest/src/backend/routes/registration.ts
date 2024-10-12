@@ -12,12 +12,11 @@ export async function registration(app: FastifyInstance) {
                 name: z.string(),
                 email: z.string().email(),
                 newPassword: z.string(),
-                newsletter: z.boolean().default(true),
-                admin: z.boolean().default(false),
+                newsletter: z.boolean(),
             }),
         },
         handler: async (request, reply) => {
-            const { name, email, newPassword, newsletter, admin } = request.body;
+            const { name, email, newPassword, newsletter} = request.body;
 
             try {
                 // Hash the password
@@ -31,7 +30,6 @@ export async function registration(app: FastifyInstance) {
                         email,
                         password: hashedPassword,
                         newsletter,
-                        admin,
                     },
                 });
 

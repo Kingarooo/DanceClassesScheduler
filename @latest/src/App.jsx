@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <Merch />,
   },
   {
-    path: '/free-lesson',
+    path: '/lessons',
     element: <LessonPage />,
   },
   {

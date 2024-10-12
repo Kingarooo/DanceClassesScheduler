@@ -78,7 +78,7 @@ const RegisterPage = () => {
         });
 
         handleClose();
-        navigate('/free-lesson');
+        navigate('/lessons');
       }
     } catch (error) {
       console.error(`${isLoginMode ? 'Login' : 'Registration'} failed:`, error);

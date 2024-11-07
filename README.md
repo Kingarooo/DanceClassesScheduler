@@ -13,10 +13,18 @@ Welcome to the Dance Class Scheduler! This application helps you manage and sche
 
 ## Project
 The *User* can:
- - Schedule a free class.
+ - Register
+ - Login
+ - Get a subscription plan
+ - Join/Leave classes
  - Send questions to the app's manager, which gets stored in the database.
  - See the location of the 'school'.
  - 
+The *Admin* can:
+Do everything the *User* can.
+- Create/Remove Classes
+- Give/Take *Users* teacher priviledges
+- Edit/Remove *Users* subscriptions
 
 ## Later: 
  - There will be a different *manager* page.
@@ -40,3 +48,4 @@ The *User* can:
   - Nodemailer
   - Bootstrap
   - React-Google-Maps
+  - Toast

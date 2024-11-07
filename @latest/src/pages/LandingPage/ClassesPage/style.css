@@ -1,0 +1,173 @@
+/* Main page styles */
+.classes-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+.style-navbar {
+    display: flex;
+    gap: 15px;
+    margin: 20px;
+}
+
+.style-button {
+    padding: 10px 20px;
+    background-color: #f3e5f5;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.style-button.selected {
+    background-color: #7b1fa2;
+    color: #fff;
+}
+
+.style-button:hover {
+    background-color: #d1c4e9;
+}
+
+.classroom-space {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start ;
+    gap: 20px;
+}
+
+.classroom-space-sub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.studio-image {
+    width: 50%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Classroom info section */
+.classroom-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;
+    margin: 20px;
+    transition: all 0.5s ease;
+}
+
+.classroom-image {
+    width: 70%;
+    height: auto;
+    max-width: 600px;
+    height: 400px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.classroom-info:hover .classroom-image {
+    transform: scale(1.05);
+}
+
+.classroom-text {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.scroll-button {
+    padding: 12px 25px;
+    background-color: #7b1fa2;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: #4a148c;
+}
+
+/* Teacher cards */
+.teacher-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.teacher-card {
+    padding: 20px;
+    background-color: #e1bee7;
+    border: 2px solid #7b1fa2;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.teacher-card:hover {
+    transform: scale(1.05);
+}
+
+.teacher-image {
+    width: 100%;
+    height: 250px;
+    object-fit:scale-down;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.teacher-card h3 {
+    color: #4a148c;
+    margin: 10px 0;
+}
+
+.teacher-card p {
+    font-size: 16px;
+    color: #6a1b9a;
+    padding: 0 10px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .classroom-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .classroom-image {
+        width: 100%;
+        max-height: 400px;
+    }
+
+    .teacher-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer fix */
+footer {
+    width: 100%;
+}

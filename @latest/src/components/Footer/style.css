@@ -1,8 +1,19 @@
 .footer {
-    background-color: var(--color-almost-black);
-    color: var(--color-text);
-    text-align: center;
-    padding: 1em 0;
-    margin-top: auto;
+   width: 100%;
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+  
   }
   
+
+  .socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .middle-part{
+    background-color: rgba(60, 36, 100, 0.3);
+  }

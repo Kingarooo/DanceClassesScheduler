@@ -26,12 +26,12 @@ export async function login(app: FastifyInstance) {
                     return reply.status(404).send({ error: 'Email not found. Please check your email and try again.' });
                 }
 
-                // Check if the password is correct
+              // Check if the password is correct
                 const isPasswordValid = await bcrypt.compare(password, user.password);
 
                 if (!isPasswordValid) {
                     return reply.status(401).send({ error: 'Incorrect password. Please check your password and try again.' });
-                }
+                }  
 
                 // Exclude the password from the user object
                 const { password: _, ...userWithoutPassword } = user;

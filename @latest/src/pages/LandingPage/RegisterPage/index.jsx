@@ -56,6 +56,8 @@ const RegisterPage = () => {
       }
 
       const url = isLoginMode ? 'http://localhost:8080/login' : 'http://localhost:8080/registration';
+      
+
       const { newPasswordConfirmation, ...data } = formData;
 
       const response = await axios.post(
@@ -78,7 +80,6 @@ const RegisterPage = () => {
         });
 
         handleClose();
-        navigate('/lessons');
       }
     } catch (error) {
       console.error(`${isLoginMode ? 'Login' : 'Registration'} failed:`, error);

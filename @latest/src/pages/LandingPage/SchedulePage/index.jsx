@@ -2,15 +2,15 @@ import React from 'react';
 import Header from '/src/components/Header';
 import Footer from '/src/components/Footer';
 import Scheduler from '/src/components/Scheduler';
-import SecNavbar from '/src/components/SecNavbar';
+import TeachersNavbar from '/src/components/TeachersNavbar';
 import './style.css';
 
-const LessonPage = () => {
+const SchedulePage = () => {
   return (
     <div className="lesson-page">
       <Header />
       <div className="scheduler">
-        <SecNavbar />
+        <TeachersNavbar />
         <Scheduler />
       </div>
       <Footer />
@@ -18,4 +18,4 @@ const LessonPage = () => {
   );
 }
 
-export default LessonPage;
+export default SchedulePage;

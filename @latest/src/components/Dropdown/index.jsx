@@ -10,25 +10,44 @@ import pfp from '/src/assets/pfp.png';
 
 
 function ButtonDarkExample({ dropdownType }) {
-    const { user, logout } = useContext(UserContext); 
+    const { user, logout } = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleLogoutClick = () => {
-        logout(); 
-        navigate('/'); 
+        logout();
+        navigate('/');
     };
 
-    const handleClassClick = () => {
-        navigate('/lessons'); // Redirect to the classes page
+    const handleScheduleClick = () => {
+        navigate('/lessons'); 
     };
+
+    const handleClassesClick = () => {
+        navigate('/classes'); 
+    }
+
+    const handleSubscriptionClick = () => {
+        navigate('/subscriptions'); 
+    };
+
     const renderDropdownItems = () => {
         if (dropdownType === 'classes') {
             return (
                 <>
-                    <Dropdown.Item className='dpd-item' title="Individual Class" active onClick={handleClassClick}>
-                        INDIVIDUAL CLASS
+                    <Dropdown.Item className='dpd-item' title="Dance Classes Schedule" active onClick={handleScheduleClick}>
+                        SCHEDULE
                     </Dropdown.Item>
-                    <Dropdown.Item className='dpd-item' title="Group Class">
+
+                    <Dropdown.Item className='dpd-item' title="Dance Classes" active onClick={handleClassesClick}>
+                        CLASSES
+                    </Dropdown.Item>
+
+                    <Dropdown.Item className='dpd-item' title="Subscription Options" active onClick={handleSubscriptionClick}>
+                        SUBSCRIPTIONS
+                    </Dropdown.Item>
+
+
+                    {/* <Dropdown.Item className='dpd-item' title="Group Class">
                         GROUP CLASS
                     </Dropdown.Item>
                     <Dropdown.Item className='dpd-item' title="Street Style">
@@ -37,7 +56,7 @@ function ButtonDarkExample({ dropdownType }) {
                     <Dropdown.Divider />
                     <Dropdown.Item className='dpd-item' title="*New* Tango">
                         *NEW* TANGO
-                    </Dropdown.Item>
+                    </Dropdown.Item> */}
                 </>
             );
         } else if (dropdownType === 'account') {

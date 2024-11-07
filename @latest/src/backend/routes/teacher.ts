@@ -120,12 +120,12 @@ export async function teachers(app: FastifyInstance) {
           },
           select: {
             id: true,
-            name: true,
+            name: true, 
             email: true
           },
         });
 
-        return reply.status(200).send(teachers);
+        return reply.status(201).send(teachers);
       } catch (error) {
         console.error('Error fetching teachers:', error);
         return reply.status(500).send({ error: 'An internal server error occurred. Please try again later.' });

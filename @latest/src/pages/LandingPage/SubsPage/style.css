@@ -1,0 +1,121 @@
+:root {
+    --primary-color: #0a0a0a;
+    --purple-color: #530d99;
+    --secondary-color: #6a1b9a;
+    --background-color: #242424;
+    --text-color: rgba(255, 255, 255, 0.87);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.subsPage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.subs-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.subscription-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.option-card {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px 10px 80px 10px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+
+.card-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.option-card:hover .card-content {
+    transform: rotateY(180deg);
+}
+
+.card-content h2,
+.card-content p {
+    margin: 0;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-content h2 {
+    transform: rotateY(0deg);
+}
+
+.card-content p {
+    transform: rotateY(180deg);
+    opacity: 0.9;
+}
+
+button {
+    padding: 20px 30px;
+    color: var(--text-color);
+    background-color: var(--purple-color);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .subscription-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    .option-card {
+        margin-bottom: 20px;
+    }
+}

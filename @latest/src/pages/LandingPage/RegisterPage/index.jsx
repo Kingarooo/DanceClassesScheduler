@@ -67,7 +67,7 @@ const RegisterPage = () => {
 
       if (response.status === 200 || response.status === 201) {
         showToast('success', `${isLoginMode ? 'Login' : 'Registration'} successful!`);
-
+        
         // Save user data globally
         console.log(`UserData: ${JSON.stringify(response.data.user)}`);
         login(response.data.user);
@@ -78,7 +78,8 @@ const RegisterPage = () => {
           newPasswordConfirmation: '',
           newsletter: true,
         });
-
+        
+        setIsLoginMode(true);
         handleClose();
       }
     } catch (error) {

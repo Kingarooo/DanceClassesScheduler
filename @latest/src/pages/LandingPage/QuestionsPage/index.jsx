@@ -6,9 +6,10 @@ const QuestionsPage = () => {
     return (
         <div className="q&a-page">
             <Header />
-            <h1>Q&A</h1>
+                <h1>Question and answer is yet to come!</h1>
+                <h1>Email: example@gmail.com</h1>
             <div className="q&a-container">
-                <div className="q&a-item">
+                {/* <div className="q&a-item">
                     <h3>Q: Question 1</h3>
                     <p>A: Answer 1</p>
                 </div>
@@ -23,7 +24,7 @@ const QuestionsPage = () => {
                 <div className="q&a-item">
                     <h3>Q: Question 4</h3>
                     <p>A: Answer 4</p>
-                </div>
+                </div> */}
             </div>
             <Footer />
         </div>

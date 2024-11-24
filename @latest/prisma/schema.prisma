@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -26,8 +26,9 @@ model User {
   isTeacher     Boolean @default(false)
   teachingStyle String?
   admin         Boolean @default(false)
+  profilePic    String?
+  totalAttendance Int @default(0)
 
-  // Relation to Subscription Plan(s)
   subscriptions UserSubscription[]
 
   classesTeaching  ClassOnTeachers[]
@@ -94,3 +95,28 @@ model UserSubscription {
 
   @@unique([userId, subscriptionPlanId])
 }
+
+// model Questions {
+//   id          String @id @default(cuid())
+//   question    String
+//   answer      String
+//   likes       Int    @default(0)
+//   isPublished Boolean @default(false)
+//   createdAt   DateTime @default(now())
+//   updatedAt   DateTime @default(now())
+  
+//   author      User @relation(fields: [id], references: [id])
+//   comments    Comments[]
+// }
+
+// model Comments {
+//   id          String @id @default(cuid())
+//   comment     String
+//   likes       Int    @default(0)
+//   isPublished Boolean @default(false)
+//   createdAt   DateTime @default(now())
+//   updatedAt   DateTime @default(now())
+
+//   author      User @relation(fields: [id], references: [id])
+//   question    Questions @relation(fields: [id], references: [id])
+// }

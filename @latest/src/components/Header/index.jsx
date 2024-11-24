@@ -30,7 +30,7 @@ const Header = () => {
           <li><ButtonDarkExample dropdownType={"classes"} /></li>
           <li><Link to="/contacts">CONTACT</Link></li>
           <li><Link to="/merch">MERCH</Link></li>
-          <li><Link to="/q&a">Q&A</Link></li>
+          <li><Link to="/q&a">Q&A</Link></li> 
           <li>
             {user ? (
               <div className="profile-area">

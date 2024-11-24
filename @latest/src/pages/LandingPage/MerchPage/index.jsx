@@ -8,7 +8,8 @@ const Merch = () => {
     return (
         <div className="merch-page">
             <Header />
-            <h1>Merch</h1>
+            <h1>Merch is still to come</h1>
+            {/* <h1>Merch</h1>
             <div className="merch-container">
                 <div className="merch-item">
                     <img src="/src/assets/merch/merch1.jpg" alt="merch1" />
@@ -34,7 +35,7 @@ const Merch = () => {
                     <p>$20.00</p>
                     <button>Buy Now</button>
                 </div>
-            </div>
+            </div> */}
             <Footer />
         </div>
     );

@@ -1,0 +1,78 @@
+.qEa-page {
+    width: 100%;
+}
+
+.qEa-buttons h1 {
+    font-size: 5em;
+    font-weight: 600;
+    color: var(--purple);
+}
+
+.qEa-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 100px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; 
+}
+
+.modal-box {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1001;
+}
+
+.modal-box h1 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.modal-box button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-box button:first-child {
+    background-color: #d9534f!important; /* Red color for "Yes" */
+    color: #fff;
+}
+
+.modal-box button:first-child:hover {
+    background-color: #c9302c;
+}
+
+.modal-box button:last-child {
+    background-color: #6c757d; /* Gray color for "No" */
+    color: #fff;
+}
+
+.modal-box button:last-child:hover {
+    background-color: #5a6268;
+}

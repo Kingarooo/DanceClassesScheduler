@@ -27,6 +27,8 @@
 }
 
 .navbar {
+  display: flex;
+  
   margin: auto;
   text-align: center;
   font-size: var(--button-font-size);

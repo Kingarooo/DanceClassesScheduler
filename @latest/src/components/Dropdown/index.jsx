@@ -30,6 +30,14 @@ function ButtonDarkExample({ dropdownType }) {
         navigate('/subscriptions'); 
     };
 
+    const handleProfileClick = () => {
+        navigate('/profile');
+    };
+
+    const handleSettingsClick = () => {
+        navigate('/settings');
+    };
+
     const renderDropdownItems = () => {
         if (dropdownType === 'classes') {
             return (
@@ -49,24 +57,17 @@ function ButtonDarkExample({ dropdownType }) {
 
                     {/* <Dropdown.Item className='dpd-item' title="Group Class">
                         GROUP CLASS
-                    </Dropdown.Item>
-                    <Dropdown.Item className='dpd-item' title="Street Style">
-                        STREET MOVEMENT
-                    </Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.Item className='dpd-item' title="*New* Tango">
-                        *NEW* TANGO
-                    </Dropdown.Item> */}
+                    </Dropdown.Item>*/}
                 </>
             );
         } else if (dropdownType === 'account') {
             return (
                 <>
 
-                    <Dropdown.Item className='dpd-item' href="/profile">
+                    <Dropdown.Item className='dpd-item' onClick={handleProfileClick}>
                         VIEW PROFILE
                     </Dropdown.Item>
-                    <Dropdown.Item className='dpd-item' href="/settings">
+                    <Dropdown.Item className='dpd-item' onClick={handleSettingsClick}>
                         SETTINGS
                     </Dropdown.Item>
                     <Dropdown.Item className='dpd-item' onClick={handleLogoutClick}>
@@ -80,10 +81,10 @@ function ButtonDarkExample({ dropdownType }) {
     return (
         <DropdownButton
             className='dpd-btn'
-            id={`dropdown-button-dark-example-${dropdownType}`}
             variant="terciary"
             title={dropdownType === 'classes' ? "CLASSES" : `${user.name}`}
             data-bs-theme="dark"
+            flip='true'
             drop='down-centered'
         >
             {renderDropdownItems()}

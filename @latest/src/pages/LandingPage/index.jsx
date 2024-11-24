@@ -41,13 +41,15 @@ const LandingPage = () => {
           <h1 id="greeting">WELCOME TO SOUL MOTION</h1>
           <div className="button-container">
             <button className="cta-button" onClick={handleFreeClassClick}>
-              {isLoginMode ?  "Schedule Free Lesson": `Welcome Back! Ready for Your Next Lesson?` }
+              {isLoginMode ?  "Schedule Free Lesson": "Welcome Back! Ready for Your Next Lesson?" }
             </button>
           </div>
         </div>
       </div>
       <div className="hero-container">
-        <p>Discover the joy of dance with our expert instructors.</p>
+      <p>Nothing to show yet.</p>
+      <br></br>
+      <p>Discover the joy of dance.</p>
       </div>
       <Footer />
     </div>

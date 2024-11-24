@@ -274,6 +274,7 @@ const Scheduler = () => {
     <div style={{ height: "500px" }}>
       <Calendar
         defaultView="month"
+        views={["month"]}
         localizer={localizer}
         events={events}
         min={moment("2024-03-18T08:00:00").toDate()}

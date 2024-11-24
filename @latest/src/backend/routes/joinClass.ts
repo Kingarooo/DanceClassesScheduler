@@ -37,6 +37,17 @@ export async function joinClass(app: FastifyInstance) {
                     }
                 });
 
+                await prisma.user.update({
+                    where: {
+                        id: userId
+                    },
+                    data: {
+                        totalAttendance: {
+                            increment: 1
+                        }
+                    }
+                })
+
                 return reply.status(200).send({ message: 'Joined class successfully!', class: updatedClass });
             } catch (error) {
                 console.error('Error joining class:', error);
@@ -64,7 +75,16 @@ export async function joinClass(app: FastifyInstance) {
                         }
                     }
                 });
-
+                await prisma.user.update({
+                    where: {
+                        id: userId
+                    },
+                    data: {
+                        totalAttendance: {
+                            decrement: 1
+                        }
+                    }
+                })
                 return reply.status(200).send({ message: 'Left class successfully!' });
             } catch (error) {
                 console.error('Error leaving class:', error);

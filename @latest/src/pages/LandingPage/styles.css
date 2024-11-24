@@ -34,8 +34,8 @@ a:hover {
 
 .carousel-item img, .carousel-item video {
   width: 100%;
-  height: 80vh; /* Adjust this to your desired height */
-  object-fit: cover; /* This will ensure the aspect ratio is maintained */
+  height: 90vh; 
+  object-fit: cover; 
 }
 
 body {
@@ -135,6 +135,15 @@ header {
 
 .signup-button:hover {
   border-color: var(--color-pink-hover);
+}
+
+.hero-container{
+  display: flex;
+  flex-direction: column;
+  font-size: 80px;
+  justify-content: center;  
+  align-items: center;
+  height: 50vh;
 }
 
 @media (prefers-color-scheme: light) {

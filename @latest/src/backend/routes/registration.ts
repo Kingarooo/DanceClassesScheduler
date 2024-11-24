@@ -44,4 +44,27 @@ export async function registration(app: FastifyInstance) {
             }
         },
     });
+
+    app.withTypeProvider<ZodTypeProvider>().delete('/registration/delete/:userId', {
+        schema: {
+            params: z.object({
+                userId: z.string(),
+            }),
+        },
+        handler: async (request, reply) => {
+            const { userId } = request.params;
+
+            try {
+                        await prisma.user.delete({
+                    where: { id: userId },
+                });
+
+                toast.success('User deleted successfully');
+                reply.code(200).send({ message: 'User deleted successfully' });
+            } catch (error) {
+                console.error('Error deleting user:', error);
+                reply.code(500).send({ error: 'An error occurred while deleting the user' });
+            }
+        },
+    });
 }

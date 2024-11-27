@@ -32,7 +32,7 @@ const app = fastify();
 
 
 app.register(fastifyCors, {
-    origin: ['http://18.175.44.162:3306'],
+    origin: ['http://35.179.128.150:3306'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'], 
     // credentials: true, // Allow credentials if needed
 });

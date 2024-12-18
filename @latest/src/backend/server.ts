@@ -1,60 +1,70 @@
 import fastify from 'fastify';
+import fastifyStatic from '@fastify/static';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { serializerCompiler, validatorCompiler } from 'fastify-type-provider-zod';
-import { teachers } from './routes/teacher';
+import fastifyCors from '@fastify/cors';
+
+// Import your routes
 import { registration } from './routes/registration';
+import { teachers } from './routes/teacher';
 import { contactEmail } from './routes/contactsEmail';
 import { classSchedule } from './routes/classes';
 import { login } from './routes/login';
 import { deleteClass } from './routes/deleteClass';
-import fastifyCors from '@fastify/cors';
 import { createSubscriptionPlan } from './routes/subPlans';
 import { userSubscription } from './routes/subUser';
 import { joinClass } from './routes/joinClass';
 import { fetchParticipants } from './routes/fetchParticipants';
 import { profile } from './routes/profile';
-// import fastifyJwt,  { FastifyJWT,  } from '@fastify/jwt'
-// import fCookie from '@fastify/cookie'
+// import fastifyJwt, { FastifyJWT } from '@fastify/jwt';
+// import fCookie from '@fastify/cookie';
 
 const app = fastify();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-
-// app.register(fastifyJwt, { secret: process.env.JWT_SECRET as string });
-
-// app.decorate('authenticate', async (request, reply) => {
-//     try {
-//         await request.jwtVerify();
-//         request.user = request.user as { id: string; email: string; name:string; newsletter: boolean; isTeacher: boolean; admin: boolean};
-//     } catch (err) {
-//         reply.send(err);
-//     }
-// });
-
-
+// Register CORS
 app.register(fastifyCors, {
-    origin: ['http://35.179.128.150:3306'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-    // credentials: true, // Allow credentials if needed
+  origin: ['http://13.42.44.149'], // Update to match your frontend's domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  // credentials: true, // Uncomment if needed
 });
 
-//ROTAS
-app.register(login);
-app.register(registration)
-app.register(contactEmail)
-app.register(teachers)
-app.register(classSchedule)
-app.register(deleteClass)
-app.register(createSubscriptionPlan)
-app.register(userSubscription)
-app.register(joinClass)
-app.register(fetchParticipants)
-app.register(profile)
+// Serve static files (React frontend build)
+app.register(fastifyStatic, {
+  root: path.join(__dirname, 'public'), // Make sure "public" points to the frontend build
+  prefix: '/', // Serve the frontend at the root URL
+});
 
-//SEMPRE AQUI
+// Handle unmatched routes (for React's SPA routing)
+app.setNotFoundHandler((req, reply) => {
+  reply.sendFile('index.html'); // Serve React's index.html for all non-API routes
+});
+
+
+// Register routes
+app.register(login);
+app.register(registration);
+app.register(contactEmail);
+app.register(teachers);
+app.register(classSchedule);
+app.register(deleteClass);
+app.register(createSubscriptionPlan);
+app.register(userSubscription);
+app.register(joinClass);
+app.register(fetchParticipants);
+app.register(profile);
+
+// Add Zod validators
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
+import dotenv from 'dotenv';
 
-app.listen({ port: 8080,  host: '0.0.0.0' }).then(() => {
-    console.log("Server Running in port 8080");
-}
-);
+dotenv.config();
+const PORT = 8080;
+// Start the server
+app.listen({ port: PORT, host: '0.0.0.0' }).then(() => {
+  console.log('Server Running on port 8080');
+});

@@ -1,12 +1,12 @@
 import { z } from 'zod';
 import { FastifyInstance } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
-import { prisma } from '../lib/prisma';
+import { prisma } from './../prisma';
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
 
 export async function classSchedule(app: FastifyInstance) {
-  
+
   // POST route to create a class schedule
   app.withTypeProvider<ZodTypeProvider>().post('/lessons/classSchedule', {
     schema: {
@@ -17,8 +17,8 @@ export async function classSchedule(app: FastifyInstance) {
         start: z.string(), // (ISO 8601)
         end: z.string(),
         frequency: z.string(),
-        teachers: z.array(z.string()), 
-        creationGroupId: z.string().optional(), 
+        teachers: z.array(z.string()),
+        creationGroupId: z.string().optional(),
       }),
     },
     handler: async (request, reply) => {
@@ -42,17 +42,14 @@ export async function classSchedule(app: FastifyInstance) {
                 user: { connect: { id: teacherId } }, // Connect the teacher to the class using ID
               })),
             },
-            creationGroupId: finalCreationGroupId, 
+            creationGroupId: finalCreationGroupId,
           },
         });
 
         return reply.status(201).send(classSchedule);
       } catch (error) {
         console.error('Error creating class schedule:', error);
-        return reply.status(500).send({
-          error: 'An internal server error occurred. Please try again later.',
-          message: error.message,
-        });
+        return reply.status(500).send("Error creating class");
       }
     },
   });
@@ -89,10 +86,7 @@ export async function classSchedule(app: FastifyInstance) {
       return reply.status(200).send(formattedClasses);
     } catch (error) {
       console.error('Error fetching class schedules:', error);
-      return reply.status(500).send({
-        error: 'An internal server error occurred. Please try again later.',
-        message: error.message,
-      });
+      return reply.status(500).send('An internal server error occurred. Please try again later.');
     }
   });
 }

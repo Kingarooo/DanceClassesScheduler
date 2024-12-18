@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import { FastifyInstance } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
-import { prisma } from '../lib/prisma';
+import { prisma } from './../prisma';
 
 export async function deleteClass(app: FastifyInstance) {
-  // DELETE route to delete all classes with the same creationGroupId
+    // DELETE route to delete all classes with the same creationGroupId
     app.withTypeProvider<ZodTypeProvider>().delete('/lessons/deleteClass/:creationGroupId', {
         schema: {
             params: z.object({
@@ -37,10 +37,7 @@ export async function deleteClass(app: FastifyInstance) {
                 return reply.status(200).send("Deleted all classes with creationGroupId: " + creationGroupId);
             } catch (error) {
                 console.error('Error deleting class schedules:', error);
-                return reply.status(500).send({
-                    error: 'An internal server error occurred. Please try again later.',
-                    message: error.message,
-                });
+                return reply.status(500).send('An internal server error occurred. Please try again later.',);
             }
         },
     });

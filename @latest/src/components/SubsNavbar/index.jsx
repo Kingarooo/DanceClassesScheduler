@@ -15,7 +15,7 @@ const SubsNavbar = () => {
   useEffect(() => {
     const fetchSubscriptions = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/subscriptions/getSubscriptionPlans');
+        const response = await axios.get(`${process.env.API_BASE_URL}/subscriptions/getSubscriptionPlans`);
         setSubscriptions(response.data.subscriptionPlans); 
       } catch (error) {
         console.error('Error fetching subscriptions:', error);
@@ -28,7 +28,7 @@ const SubsNavbar = () => {
   const handleAddSubscription = async () => {
     if (userEmail.trim() ) {
       try {
-        const response = await axios.post('http://localhost:8080/subscriptions/createUserSubscription', { email: userEmail, subscriptionId: subscriptionPlan });
+        const response = await axios.post('${process.env.API_BASE_URL}/subscriptions/createUserSubscription', { email: userEmail, subscriptionId: subscriptionPlan });
         toast.success(`${userEmail} has been subscribed to plan ${subscriptionPlan}!`);
         setUserEmail('');
         setSubscriptionPlan('');
@@ -43,7 +43,7 @@ const SubsNavbar = () => {
   const handleRemoveSubscription = async () => {
     if (userEmail.trim() && subscriptionPlan.trim()) {
       try {
-        const response = await axios.put('http://localhost:8080/subscriptions/removeUserSubscriptions', { email: userEmail, planId: 0 });
+        const response = await axios.put('${process.env.API_BASE_URL}/subscriptions/removeUserSubscriptions', { email: userEmail, planId: 0 });
         toast.success(`Subscription for ${userEmail} has been removed.`);
         setUserEmail('');
         setSubscriptionPlan('');

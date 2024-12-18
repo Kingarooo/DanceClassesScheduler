@@ -55,7 +55,7 @@ const RegisterPage = () => {
         return;
       }
 
-      const url = isLoginMode ? 'http://localhost:8080/login' : 'http://localhost:8080/registration';
+      const url = isLoginMode ? `${process.env.API_BASE_URL}/login` : `${process.env.API_BASE_URL}/registration`;
       
 
       const { newPasswordConfirmation, ...data } = formData;

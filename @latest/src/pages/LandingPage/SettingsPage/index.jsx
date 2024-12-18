@@ -15,7 +15,7 @@ const QuestionsPage = () => {
 
     const deleteAccount = async () => {
         try {
-            const response = await axios.delete(`http://localhost:8080/registration/delete/${user.id}`);
+            const response = await axios.delete(`${process.env.API_BASE_URL}/registration/delete/${user.id}`);
             setConfirmationModal(false);
             if (response.status === 200) {
                 showToast('Account deleted successfully');

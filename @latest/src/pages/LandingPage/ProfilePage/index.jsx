@@ -20,7 +20,7 @@ const ProfilePage = () => {
                 
             }
             try {
-                const response = await axios.get(`http://localhost:8080/profile/user-info/${user.id}`);
+                const response = await axios.get(`${process.env.API_BASE_URL}/profile/user-info/${user.id}`);
                 console.log("Getting user info: ", response.data);
                 setLoggedUser(response.data.user);  // Accessing the user key in response
             } catch (error) {
@@ -34,7 +34,7 @@ const ProfilePage = () => {
     useEffect(() => {
         const fetchTopUsers = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/profile/top-users`);
+                const response = await axios.get(`${process.env.API_BASE_URL}/profile/top-users`);
                 console.log("Getting top users: ", response.data);
                 setTopUsers(response.data.topUsers); 
             } catch (error) {

@@ -1,8 +1,7 @@
 import type { FastifyInstance } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { z } from 'zod';
-import { prisma } from '../lib/prisma';
-import { connect } from 'http2';
+import { prisma } from './../prisma';
 
 export async function joinClass(app: FastifyInstance) {
     app.withTypeProvider<ZodTypeProvider>().post('/class/joinClass/:id/:userId', {

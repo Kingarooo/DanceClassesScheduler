@@ -6,7 +6,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import { UserContext } from '/src/contexts/UserContext';
 import './style.css';
 
-import pfp from '/src/assets/pfp.png';
+// import pfp from '/src/assets/pfp.png';
 
 
 function ButtonDarkExample({ dropdownType }) {
@@ -84,7 +84,6 @@ function ButtonDarkExample({ dropdownType }) {
             variant="terciary"
             title={dropdownType === 'classes' ? "CLASSES" : `${user.name}`}
             data-bs-theme="dark"
-            flip='true'
             drop='down-centered'
         >
             {renderDropdownItems()}

@@ -44,7 +44,7 @@ const ContactsPage = () => {
         setIsLoading(true);
         console.log(formData); // Debugging log
         try {
-            const response = await axios.post('http://localhost:8080/contacts', formData);
+            const response = await axios.post(`${process.env.API_BASE_URL}/contact`, formData);
             if (response.status === 200) {
                 notify();
                 setFormData({

@@ -40,7 +40,7 @@ const Scheduler = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/lessons/classSchedule');
+          const response = await axios.get(`${process.env.API_BASE_URL}/lessons/classSchedule`);
         console.log("Saving these events", response.data);
         setEvents(response.data);  // Assuming your backend returns an array of events
       } catch (error) {
@@ -53,7 +53,7 @@ const Scheduler = () => {
 
   const getEventParticipants = async (event) => {
     try {
-      const response = await axios.get(`http://localhost:8080/class/showParticipants/${event.id}`);
+      const response = await axios.get(`${process.env.API_BASE_URL}/class/showParticipants/${event.id}`);
       const eventParticipants = response.data;
       const eventParticipantsArray = eventParticipants.map(participant => ({
         id: participant.user.id,
@@ -90,7 +90,7 @@ const Scheduler = () => {
 
   const handleJoinClass = async () => {
     try {
-      const response = await axios.post(`http://localhost:8080/class/joinClass/${selectEvent.id}/${user.id}`);
+      const response = await axios.post(`${process.env.API_BASE_URL}/class/joinClass/${selectEvent.id}/${user.id}`);
       if (response.status === 200) {
         setIsJoined(true);
         toast.success('You have successfully joined the class.')
@@ -105,7 +105,7 @@ const Scheduler = () => {
 
   const handleLeaveClass = async () => {
     try {
-      const response = await axios.delete(`http://localhost:8080/class/deleteParticipant/${selectEvent.id}/${user.id}`);
+      const response = await axios.delete(`${process.env.API_BASE_URL}/class/deleteParticipant/${selectEvent.id}/${user.id}`);
       if (response.status === 200) {
         setIsJoined(false);
         toast.success('You have successfully left the class.');
@@ -129,7 +129,7 @@ const Scheduler = () => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:8080/lessons/showTeachers')
+    axios.get(`${process.env.API_BASE_URL}/lessons/showTeachers`)
       .then(response => {
         console.log("Teachers available:", response.data);
         setAvailableTeachers(response.data);
@@ -208,7 +208,7 @@ const Scheduler = () => {
       try {
         // Save each event to the backend 
         const savedEvents = [];
-        const response = await Promise.all(eventsToSave.map(event => axios.post('http://localhost:8080/lessons/classSchedule', event)));
+        const response = await Promise.all(eventsToSave.map(event => axios.post('${process.env.API_BASE_URL}/lessons/classSchedule', event)));
         savedEvents.push(response.data);
 
         // Add the new events to the calendar
@@ -226,7 +226,7 @@ const Scheduler = () => {
     const updatedEvents = events.filter((event) => event !== selectEvent);
 
     try {
-      const deletion = await axios.delete(`http://localhost:8080/lessons/deleteClass/${creationGroupId}`);
+      const deletion = await axios.delete(`${process.env.API_BASE_URL}/lessons/deleteClass/${creationGroupId}`);
       console.log("Event deleted", deletion);
       toast.success('Event deleted successfully:');
       setEvents(updatedEvents);

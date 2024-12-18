@@ -13,7 +13,7 @@ const SecNavbar = () => {
   const handleAddTeacher = async () => {
     if (teacherEmail.trim()) {
       try {
-        const response = await axios.put('http://localhost:8080/lessons/newTeacher', { email: teacherEmail });
+        const response = await axios.put(`${process.env.API_BASE_URL}/lessons/newTeacher`, { email: teacherEmail });
         toast.success(`${teacherEmail} has been added as a teacher!`);
         setTeacherEmail('');
         setExpandedForm(null); // Close form after action
@@ -26,7 +26,7 @@ const SecNavbar = () => {
   const handleRemoveTeacher = async () => {
     if (teacherEmail.trim()) {
       try {
-        const response = await axios.put('http://localhost:8080/lessons/removeTeacher', { email: teacherEmail });
+        const response = await axios.put(`${process.env.API_BASE_URL}/lessons/removeTeacher`, { email: teacherEmail });
         toast.success(`${teacherEmail} has been removed as a teacher!`);
         setTeacherEmail('');
         setExpandedForm(null); // Close form after action
@@ -41,7 +41,7 @@ const SecNavbar = () => {
       const confirmDelete = window.confirm(`Are you sure you want to delete ${teacherEmail}'s account?`);
       if (confirmDelete) {
         try {
-          const response = await axios.delete('http://localhost:8080/lessons/deleteUser', { data: { email: teacherEmail } });
+          const response = await axios.delete(`${process.env.API_BASE_URL}/lessons/deleteUse`, { data: { email: teacherEmail } });
           toast.success(`${teacherEmail}'s account has been deleted.`);
           setTeacherEmail('');
           setExpandedForm(null); // Close form after action
